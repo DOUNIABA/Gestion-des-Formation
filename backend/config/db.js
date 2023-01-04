@@ -1,8 +1,10 @@
 
 const mongoose = require('mongoose')
-const dotenv=require('dotenv').config
+const dotenv = require('dotenv').config()
 
-mongoose.connect(process.env.DB_CONNECT,{userNewUrlParser:true},()=>{
-    console.log('connected')})
+mongoose.connect(process.env.CONNECT).then(()=>{
+    console.log('connected')
+})
+.catch((err)=>{console.log(err)})
 
 module.exports= mongoose
