@@ -12,15 +12,22 @@ const CreateOrganisme=(req,res)=>{
     res.json(organisme)
 }
 
-const UpdateOrganisme= async ()=>{
-    const {id}=req.body
-    const organisme= await Organisme.findOne({_id:id})
-    res.json({msg:""})
+const UpdateOrganisme= async (req,res)=>{
+    const id = req.params.id
+    const {body}=req
+    const organisme= await Organisme.updateOne(id,{...body})
+       
+           if(organisme) res.send('updated')
+    res.send('not updated')
+
 }
 
-const DeleteOrganisme=()=>{
 
-    res.json({msg:""})
+const DeleteOrganisme=async (req,res)=>{
+    const id =req.params.id
+    const organisme= await Organisme.deleteOne({id})
+    if(organisme)
+    res.send('deleted')
 }
 
 
