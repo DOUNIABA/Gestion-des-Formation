@@ -4,4 +4,11 @@ const GetAllRole= async ()=>{
     const role= await Role.find()
     res.json(role)
 }
-module.exports={GetAllRole}
+
+const CreateRole= async (req,res)=>{
+    const {body}=req
+    const role= await Role.create({...body})
+    if(!role) res.send('not created')
+    res.send('created')
+}
+module.exports={GetAllRole,CreateRole}
