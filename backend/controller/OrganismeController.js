@@ -16,12 +16,10 @@ const UpdateOrganisme= async (req,res)=>{
     const id = req.params.id
     const {body}=req
     const organisme= await Organisme.updateOne(id,{...body})
-       
-           if(organisme) res.send('updated')
+    if(organisme) res.send('updated')
     res.send('not updated')
 
 }
-
 
 const DeleteOrganisme=async (req,res)=>{
     const id =req.params.id
