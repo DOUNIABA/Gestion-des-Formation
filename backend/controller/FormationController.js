@@ -2,7 +2,6 @@
 const Formation=require('../model/FormationModel')
 
 const GetAllFormation= async (req,res)=>{
-
     const formation=await Formation.find()
     res.json(formation)
 }
