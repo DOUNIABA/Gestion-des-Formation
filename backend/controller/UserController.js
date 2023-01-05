@@ -6,6 +6,7 @@ const GetAllUsers= async ()=>{
     const user=await User.find()
     res.json(user)
 }
+
 const CreateEmployee=async (req,res)=>{
  const {body}=req
  const user = await User.findOne({email:body.email})
