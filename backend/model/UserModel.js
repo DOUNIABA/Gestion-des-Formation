@@ -13,7 +13,7 @@ const Userschema= new mongoose.Schema({
     role_id:{
         type:mongoose.Schema.Types.ObjectId,
         ref:'Role'
-},
+    },
     Organisme_id:{
         type:mongoose.Schema.Types.ObjectId,
         ref:'Organisme'
@@ -23,6 +23,7 @@ const Userschema= new mongoose.Schema({
         ref:'Formation'
     }
 }
+
 )
 const User=mongoose.model("user",Userschema)
 module.exports=User

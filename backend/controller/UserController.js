@@ -3,7 +3,7 @@ const User=require('../model/UserModel')
 const bcrypt=require('bcryptjs')
 
 const GetAllUsers= async ()=>{
-    const user=await User.find()
+  const user=await User.find()
     res.json(user)
 }
 
@@ -18,4 +18,5 @@ const CreateEmployee=async (req,res)=>{
  if(!add) res.send('not created')
  res.send('created')
 }
+
 module.exports={GetAllUsers,CreateEmployee}
