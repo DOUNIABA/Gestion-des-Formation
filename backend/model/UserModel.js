@@ -1,6 +1,5 @@
 
 const mongoose=require('mongoose')
-const Organisme = require('./OrganismeModel')
 const Userschema= new mongoose.Schema({
     name:{
         type:String,

@@ -4,9 +4,11 @@ const bcrypt=require('bcryptjs')
 const jwt=require('jsonwebtoken')
 const localstorage=require('local-storage')
 
-const signin=async (req,res)=>{
+const signin= async (req,res)=>{
     const {body}=req
     const email = await User.findOne({email:body.email})
+    .populate({path: 'role_id',model:'Role'})
+    
     if(!email) res.send('user not found')
     const password= await bcrypt.compare(body.password, email.password)
     if(!password) res.send('password not valid')
