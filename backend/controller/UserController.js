@@ -7,7 +7,7 @@ const GetAllUsers= async ()=>{
     res.json(user)
 }
 
-const CreateEmployee=async (req,res)=>{
+const CreateEmployee=async (req,res)=>{""
  const {body}=req
  const user = await User.findOne({email:body.email})
  if(user) res.send('existe déja')
@@ -17,6 +17,7 @@ const CreateEmployee=async (req,res)=>{
  const add= await User.create({...body})
  if(!add) res.send('not created')
  res.send('created')
+
 }
 
 module.exports={GetAllUsers,CreateEmployee}
