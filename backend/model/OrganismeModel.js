@@ -7,7 +7,7 @@ const OrganismeSchema=new mongoose.Schema({
     },
     address:{
         type:String
-    },
+    }
 
 })
 const Organisme=mongoose.model('organisme',OrganismeSchema)

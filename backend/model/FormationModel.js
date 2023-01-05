@@ -13,6 +13,10 @@ const FormationSchema=new mongoose.Schema({
     description:{
         type:String
     },
+    Organisme_id:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:'Organisme'
+    }
  
 })
 const Formation = mongoose.model("formation",FormationSchema)

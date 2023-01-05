@@ -1,13 +1,13 @@
 
-const User=require('../model/UserModel')
+const User=require('../model/EmployeModel')
 const bcrypt=require('bcryptjs')
 
-const GetAllUsers= async ()=>{
+const GetEmployes= async ()=>{
   const user=await User.find()
     res.json(user)
 }
 
-const CreateEmployee=async (req,res)=>{""
+const CreateEmployes=async (req,res)=>{""
  const {body}=req
  const user = await User.findOne({email:body.email})
  if(user) res.send('existe déja')
@@ -20,4 +20,4 @@ const CreateEmployee=async (req,res)=>{""
 
 }
 
-module.exports={GetAllUsers,CreateEmployee}
+module.exports={GetEmployes,CreateEmployes}

@@ -1,4 +1,4 @@
-const User=require('../model/UserModel')
+const User=require('../model/EmployeModel')
 const bcrypt=require('bcryptjs')
 const jwt=require('jsonwebtoken')
 const localstorage=require('local-storage')
