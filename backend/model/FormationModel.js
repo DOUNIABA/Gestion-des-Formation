@@ -1,7 +1,7 @@
 
 const mongoose=require('mongoose')
 const FormationSchema=new mongoose.Schema({
-    name:{
+    formation:{
         type:String,
     },
     image:{

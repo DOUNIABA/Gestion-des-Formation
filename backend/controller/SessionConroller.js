@@ -1,10 +1,9 @@
 
-const User = require('../model/EmployeModel')
 const Session = require('../model/SessionModel')
 const User=require('../model/EmployeModel')
 const Formation=require('../model/FormationModel')
 
-const GetAllSession=async ()=>{
+const GetAllSession=async (req,res)=>{
     const session= await Session.find()
     .populate([
         {
@@ -19,7 +18,7 @@ const GetAllSession=async ()=>{
     res.json(session)
 }
 
-const CreateSession= async ()=>{
+const CreateSession= async (req,res)=>{
     const {body}=req
     const session=await Session.create({...body})
     if(!session) res.send('not created')

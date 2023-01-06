@@ -8,7 +8,7 @@ const formation=require('./router/routes/FormationRoutes')
 const organisme=require('./router/routes/OrganismRoutes')
 const role=require('./router/routes/RoleRoute')
 const auth=require('./router/routes/AuthRoute')
-const session=require('./router/routes/')
+const session=require('./router/routes/SessionRoutes')
 
 app.use(cors())
 app.use(express.json())
@@ -19,6 +19,7 @@ app.use('/formation',formation)
 app.use('/organisme',organisme)
 app.use('/role',role)
 app.use('/auth',auth)
+app.use('/session',session)
 
 app.listen(8080)
 

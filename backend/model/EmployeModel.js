@@ -1,6 +1,6 @@
 
 const mongoose=require('mongoose')
-const Userschema= new mongoose.Schema({
+const Userschema = new mongoose.Schema({
     name:{
         type:String,
     },
@@ -23,7 +23,6 @@ const Userschema= new mongoose.Schema({
         ref:'Formation'
     }
 }
-
 )
 const User=mongoose.model("user",Userschema)
 module.exports=User
