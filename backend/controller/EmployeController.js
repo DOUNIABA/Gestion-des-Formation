@@ -17,7 +17,21 @@ const CreateEmployes=async (req,res)=>{""
  const add= await User.create({...body})
  if(!add) res.send('not created')
  res.send('created')
-
 }
 
-module.exports={GetEmployes,CreateEmployes}
+const UpdateEmploye=async (req,res)=>{
+  const id = req.params.id
+  const {body}=req
+  const formation= await User.updateOne(id,{...body})
+  if(formation) res.send('updated')
+  res.json({msg:""})
+}
+
+const DeleteEmploye= async (req,res)=>{
+  const id =req.params.id
+  const formation= await Formation.deleteOne({id})
+  if(formation)
+  res.json("deleted")
+}
+
+module.exports={GetEmployes,CreateEmployes,UpdateEmploye,DeleteEmploye}
