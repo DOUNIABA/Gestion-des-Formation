@@ -13,7 +13,7 @@ app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 
-app.use('/employe',employe)
+app.use('/api/employe',employe)
 app.use('/formation',formation)
 app.use('/organisme',organisme)
 app.use('/role',role)
