@@ -15,7 +15,7 @@ function Employedisplay() {
   useEffect(()=>{
     data();
   },[])
-  console.log(Data)
+console.log(Data)
   
     return (
     <div>
