@@ -1,8 +1,7 @@
-
 const User=require('../model/EmployeModel')
 const bcrypt=require('bcryptjs')
 
-const GetEmployes= async ()=>{
+const GetEmployes= async (req,res)=>{
   const user=await User.find()
     res.json(user)
 }

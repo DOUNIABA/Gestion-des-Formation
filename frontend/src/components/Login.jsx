@@ -1,19 +1,22 @@
-import { useState } from "react";
+import {useState,useEffect} from 'react'
+import { useNavigate } from 'react-router-dom'
 import "../App.css";
-import { useNavigate, Link } from "react-router-dom";
 import axios from 'axios'
 
 const Login = () => {
-    // const navigate=useNavigate()
+    const navigate=useNavigate()
     const [errmsg,seterrmsg]=useState(false)
     const [msg,setmsg]=useState(false)
     const [Data, setData] = useState({});
   
-    const handleSubmit = async ()=>{	
-	try{
+    const handleSubmit = async (e)=>{	
+	   e.preventDefault()
+       console.log(Data)
+        try{
 		const user = await axios.post(`http://localhost:8080/api/auth/login`, Data)
 			if(user.data){
             localStorage.setItem("token",user.data)
+            navigate('/employe/list')
             console.log(Data);
             }
          
@@ -23,7 +26,7 @@ const Login = () => {
 	}
 
   const onChange = (e) => {
-    setData({ ...Data, [e.target.name]: e.target.value });
+    setData({...Data, [e.target.name]: e.target.value });
   };
   
   return (
