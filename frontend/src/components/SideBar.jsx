@@ -14,17 +14,7 @@ export default function SideBar() {
 
             <div className="text-center " />
             <hr className=""></hr>
-           
-            <a
-              href="#"
-              className="list-group-item mx-5 border-0  merriweather bg-transparent mt-5"
-              style={{ color: "#90f5d7" }}
-            >
-              <span style={{ color: "#90f5d7" }}>
-                <i className="fas fa-home"></i>
-                <span>Profil</span>
-              </span>
-            </a>
+    
             <Link
               to="/appartement"
               className="list-group-item  mx-5 border-0 merriweather bg-transparent mt-5 "

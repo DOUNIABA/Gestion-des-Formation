@@ -1,18 +1,16 @@
 
 const mongoose=require('mongoose')
-const Userschema = new mongoose.Schema({
+const Employes = new mongoose.Schema({
     name:{
         type:String,
     },
     email:{
-        type:String
-    },
-    password:{
         type:String,
+        required:true,
     },
-    role_id:{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:'Role'
+    tele:{
+        type:Number,
+        required:true,
     },
     Organisme_id:{
         type:mongoose.Schema.Types.ObjectId,
@@ -24,5 +22,5 @@ const Userschema = new mongoose.Schema({
     }
 }
 )
-const User=mongoose.model("user",Userschema)
-module.exports=User
+const Employe=mongoose.model("employe",Employes)
+module.exports=Employe

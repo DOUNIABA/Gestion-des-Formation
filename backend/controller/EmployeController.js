@@ -1,19 +1,16 @@
-const User=require('../model/EmployeModel')
+const Employe=require('../model/EmployeModel')
 const bcrypt=require('bcryptjs')
 
 const GetEmployes= async (req,res)=>{
-  const user=await User.find()
-    res.json(user)
+  const employe=await Employe.find()
+    res.json(employe)
 }
 
-const CreateEmployes=async (req,res)=>{""
+const CreateEmployes=async (req,res)=>{
  const {body}=req
- const user = await User.findOne({email:body.email})
- if(user) res.send('existe déja')
- const salt = await bcrypt.genSalt(10)
- const pass=await bcrypt.hash(body.password,salt)
- body.password=pass
- const add= await User.create({...body})
+ const employe = await Employe.findOne({email:body.email})
+ if(employe) res.send('existe déja')
+ const add= await Employe.create({...body})
  if(!add) res.send('not created')
  res.send('created')
 }
@@ -21,15 +18,15 @@ const CreateEmployes=async (req,res)=>{""
 const UpdateEmploye=async (req,res)=>{
   const id = req.params.id
   const {body}=req
-  const formation= await User.updateOne(id,{...body})
-  if(formation) res.send('updated')
-  res.json({msg:""})
+  const employe= await Employe.updateOne(id,{...body})
+  if(employe) res.send('updated')
+  res.send("not updated")
 }
 
 const DeleteEmploye= async (req,res)=>{
   const id =req.params.id
-  const formation= await Formation.deleteOne({id})
-  if(formation)
+  const employe= await Employe.deleteOne({id})
+  if(employe)
   res.json("deleted")
 }
 

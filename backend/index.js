@@ -5,7 +5,6 @@ const cors = require('cors')
 const employe=require('./router/routes/EmployeRoutes')
 const formation=require('./router/routes/FormationRoutes')
 const organisme=require('./router/routes/OrganismRoutes')
-const role=require('./router/routes/RoleRoute')
 const auth=require('./router/routes/AuthRoute')
 const session=require('./router/routes/SessionRoutes')
 
@@ -14,11 +13,10 @@ app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 
 app.use('/api/employe',employe)
-app.use('/formation',formation)
-app.use('/organisme',organisme)
-app.use('/role',role)
+app.use('/api/formation',formation)
+app.use('/api/organisme',organisme)
 app.use('/api/auth',auth)
-app.use('/session',session)
+app.use('/api/session',session)
 
 app.listen(8080)
 

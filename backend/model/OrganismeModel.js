@@ -1,6 +1,6 @@
 const mongoose=require('mongoose')
 
-const OrganismeSchema=new mongoose.Schema({
+const Organismes=new mongoose.Schema({
 
     name:{
         type:String,
@@ -10,5 +10,5 @@ const OrganismeSchema=new mongoose.Schema({
     }
 
 })
-const Organisme=mongoose.model('organisme',OrganismeSchema)
+const Organisme=mongoose.model('organisme',Organismes)
 module.exports=Organisme

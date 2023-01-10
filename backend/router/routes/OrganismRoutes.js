@@ -4,7 +4,7 @@ const {GetAllOrganisme,CreateOrganisme,UpdateOrganisme,DeleteOrganisme}=require(
 
 router.get('/allorganisme',GetAllOrganisme)
 router.post('/createorganisme',CreateOrganisme)
-router.put('/updateorganisme',UpdateOrganisme)
-router.delete('/deletorganisme',DeleteOrganisme)
+router.put('/:id',UpdateOrganisme)
+router.delete('/:id',DeleteOrganisme)
 
 module.exports=router

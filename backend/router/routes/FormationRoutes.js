@@ -4,7 +4,7 @@ const {GetAllFormation,CreateFormation,UpdateFormation,DeleteFormation}=require(
 
 router.get('/allformation',GetAllFormation)
 router.post('/createformation',CreateFormation)
-router.put('/updateformation',UpdateFormation)
-router.delete('/deletformation',DeleteFormation)
+router.put('/:id',UpdateFormation)
+router.delete('/:id',DeleteFormation)
 
 module.exports= router

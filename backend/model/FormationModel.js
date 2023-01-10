@@ -1,6 +1,6 @@
 
 const mongoose=require('mongoose')
-const FormationSchema=new mongoose.Schema({
+const Formations=new mongoose.Schema({
     formation:{
         type:String,
     },
@@ -19,5 +19,5 @@ const FormationSchema=new mongoose.Schema({
     }
  
 })
-const Formation = mongoose.model("formation",FormationSchema)
+const Formation = mongoose.model("formation",Formations)
 module.exports=Formation

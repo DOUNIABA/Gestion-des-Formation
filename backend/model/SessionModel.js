@@ -1,7 +1,7 @@
 
 const mongoose=require('mongoose')
 
-const SessionSchema= new mongoose.Schema({
+const Sessions= new mongoose.Schema({
     user_id:{
         type:mongoose.Schema.Types.ObjectId,
         ref:'User'
@@ -13,5 +13,5 @@ const SessionSchema= new mongoose.Schema({
     }
 })
 
-const Session=mongoose.model("session",SessionSchema)
+const Session=mongoose.model("session",Sessions)
 module.exports=Session

@@ -2,7 +2,8 @@ import React from 'react'
 import { useEffect,useState } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
-
+import "../App.css";
+const style={width:"auto"}
 const Employedisplay = ()=> {
 
     const [Data,setData]=useState([])
@@ -18,47 +19,57 @@ const Employedisplay = ()=> {
     },[])
 
   return (
-    <div>
-    <div className=" ms-5 mt-3">
-        <h3 className="ms-5">Employees</h3>
-        <hr></hr>   
-   <div className="container shadow d-flex flex-column justify-content-start tblw ms-5">
-   <h2><Link to=""  className="text-secondary" ><i class="bi bi-plus-circle-fill"></i></Link></h2>
-    <div className="bg-white mt-3">
+    <div className="bg-gray-300 h-screen flex-col">
+      <div>
+      </div>
+      <div className="flex  ">
+        <div className="lg:block">
+        </div>
+        <div className="m-3 w-100">
+          <div>
+           
+           
+          </div>
+          <div className="my-6">
+            <h2 className="text-xl font-bold text-gray-800 mb-3">
+              Les Employés <hr className="my-2 p-0" />
+            </h2>
 
-     <table className="table table-bordered">
-     <thead>
-         <tr>
-         <th scope="col" className='text-center'>Full Name</th>
-         <th scope="col" className='text-center'>Email</th>  
-         <th scope="col" className='text-center'>update</th>
-         <th scope="col" className='text-center'>delete</th>
-         </tr>
-     </thead>
-     <tbody >
-       {
-        Data.map((e)=>(
-                 <tr key={e._id}>
-                 <td>{e.name}</td>
-                 <td>{e.email}</td>
-                 <td className='text-center'>
-                     <button type="submit"  value={e._id}   className="btn btn-primary w-25 h-25 "></button>
-                     </td>
-                     <td className='text-center'>
-                     <button type="submit"  value={e._id}   className=" btn btn-danger w-25 h-25 "></button>
-                     </td>
-                 </tr>
-         ))
-       }
-     
-     </tbody>
-     </table>
-
-     </div>
-    
- </div>
- </div>
- </div>
+            <button type='submit' className="b " style={style}>
+                    Add Employé
+                  </button>
+        
+              <h2><Link to="/auth/manager/plat/add"  className="text-secondary" ><i class="bi bi-plus-circle-fill"></i></Link></h2>
+            <table className="table table-bordered">
+              <tr className="text-black">
+                <th></th>
+                <th>name</th>
+                <th>Email</th>
+                <th>Tele </th>
+                <th>action </th>
+              </tr>
+              {Data.map((e) => (
+              <tbody>
+                <tr>
+                  <th></th>
+                  <td>{e.name}</td>
+                  <td>{e.cin} </td>
+                  <td>{e.tel}</td>
+                  <td>
+                    <button className="btn  btn-primary  mt-5" >
+                    
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+                ))}
+            </table>
+          </div>
+      
+        
+        </div>
+      </div>
+    </div>
   )
 }
 
