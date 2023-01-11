@@ -12,6 +12,15 @@ const CreateOrganisme=(req,res)=>{
     res.json(organisme)
 }
 
+const getOrg= async (req,res)=>{
+    const {id}= req.body
+   const org= await Organisme.findOne({_id:id})
+     res.json({
+      msg:"data",
+      data:org,
+    })
+  }
+
 const UpdateOrganisme= async (req,res)=>{
     const id = req.params.id
     const {body}=req
@@ -29,4 +38,4 @@ const DeleteOrganisme=async (req,res)=>{
 }
 
 
-module.exports={GetAllOrganisme,CreateOrganisme,UpdateOrganisme,DeleteOrganisme}
+module.exports={GetAllOrganisme,CreateOrganisme,getOrg,UpdateOrganisme,DeleteOrganisme}

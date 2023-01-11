@@ -1,25 +1,26 @@
-import React, { useState } from 'react'
-import { Navigate, useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import React from 'react'
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
-const  AddEmploye=()=> {
-    const Navigate=useNavigate()
- 
-    const [formData,SetformData]=useState([])
+function EditEmploye() {
+const navigate=useNavigate()
+const [Data,setData]=useState([])
 
-    const handleSubmit= async (e)=>{
-        e.preventDefault();
-        const employe=await axios.post('http://localhost:8080/api/employe/createemployes',formData)
-        if(employe.data) Navigate('/employe/list')
-        // console.log(employe.data)
+
+const handleSubmit=async (e)=>{
+    e.preventDefault();
+    const emp=await axios.put('http://localhost:8080/api/employe/update/${id}',Data)
+    if(emp.data) navigate('/employe/list')}
+
+    const onChange=(e)=>{
+        setData({...Data,[e.target.name]:e.target.value})
     }
 
-    const onChange = (e) => {
-        SetformData({...formData, [e.target.name]: e.target.value });
-      };
-
+    
   return (
     <div>
+          <div>
       <form className="form-container shadow ms-5 mt-5" onSubmit={handleSubmit} >
         <div className="col-md-12">
             <span>Nom</span>
@@ -30,6 +31,7 @@ const  AddEmploye=()=> {
             placeholder="Employee Name"
             required
             onChange={onChange}
+            value={name}
             />
         </div>
         <div className="col-md-12">
@@ -41,6 +43,7 @@ const  AddEmploye=()=> {
             placeholder="Email Employee"
             required
             onChange={onChange}
+            value={email}
             />
         </div>
         <div className="col-md-12">
@@ -52,6 +55,7 @@ const  AddEmploye=()=> {
             placeholder="Tele Employee"
             required
             onChange={onChange}
+            value={tele}
             />
         </div>
 
@@ -62,7 +66,9 @@ const  AddEmploye=()=> {
             >Save</button>
         </form>      
     </div>
+      
+    </div>
   )
 }
 
-export default AddEmploye
+export default EditEmploye

@@ -1,4 +1,3 @@
-
 const mongoose=require('mongoose')
 const Formations=new mongoose.Schema({
     formation:{
@@ -17,7 +16,6 @@ const Formations=new mongoose.Schema({
         type:mongoose.Schema.Types.ObjectId,
         ref:'Organisme'
     }
- 
 })
 const Formation = mongoose.model("formation",Formations)
 module.exports=Formation

@@ -14,6 +14,14 @@ const CreateEmployes=async (req,res)=>{
  if(!add) res.send('not created')
  res.send('created')
 }
+const getEmp= async (req,res)=>{
+  const {id}= req.body
+ const emp= await Employe.findOne({_id:id})
+   res.json({
+    msg:"data",
+    data:emp,
+  })
+}
 
 const UpdateEmploye=async (req,res)=>{
   const id = req.params.id
@@ -30,4 +38,4 @@ const DeleteEmploye= async (req,res)=>{
   res.json("deleted")
 }
 
-module.exports={GetEmployes,CreateEmployes,UpdateEmploye,DeleteEmploye}
+module.exports={GetEmployes,CreateEmployes,UpdateEmploye,DeleteEmploye,getEmp}

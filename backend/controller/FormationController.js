@@ -12,6 +12,14 @@ const CreateFormation=async (req,res)=>{
     if(!formation) res.json({msg:"not created"})
     res.json(formation)
 }
+const getForm= async (req,res)=>{
+    const {id}= req.body
+   const form= await Formation.findOne({_id:id})
+     res.json({
+      msg:"data",
+      data:form,
+    })
+  }
 
 const UpdateFormation=async (req,res)=>{
     const id = req.params.id
@@ -28,4 +36,4 @@ const DeleteFormation= async (req,res)=>{
     res.json("deleted")
 }
 
-module.exports={GetAllFormation,CreateFormation,UpdateFormation,DeleteFormation}
+module.exports={GetAllFormation,CreateFormation,UpdateFormation,DeleteFormation,getForm}

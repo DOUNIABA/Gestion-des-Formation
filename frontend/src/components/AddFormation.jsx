@@ -9,9 +9,9 @@ const  AddEmploye=()=> {
 
     const handleSubmit= async (e)=>{
         e.preventDefault();
-        const employe=await axios.post('http://localhost:8080/api/employe/createemployes',formData)
-        if(employe.data) Navigate('/employe/list')
-        // console.log(employe.data)
+        const formation=await axios.post('http://localhost:8080/api/formation/createformation',formData)
+        if(formation.data) Navigate('/fomation/list')
+        // console.log(formation.data)
     }
 
     const onChange = (e) => {
@@ -22,10 +22,10 @@ const  AddEmploye=()=> {
     <div>
       <form className="form-container shadow ms-5 mt-5" onSubmit={handleSubmit} >
         <div className="col-md-12">
-            <span>Nom</span>
+            <span>Formation</span>
             <input
             type="text"
-            name="name"
+            name="formation"
             className="form-control"
             placeholder="Employee Name"
             required
@@ -33,10 +33,10 @@ const  AddEmploye=()=> {
             />
         </div>
         <div className="col-md-12">
-            <span>Email</span>
+            <span>Durée</span>
             <input
             type="text"
-            name="email"
+            name="duree"
             className="form-control"
             placeholder="Email Employee"
             required
@@ -44,10 +44,10 @@ const  AddEmploye=()=> {
             />
         </div>
         <div className="col-md-12">
-            <span>Téléphone</span>
+            <span>Description</span>
             <input
             type="text"
-            name="tele"
+            name="description"
             className="form-control"
             placeholder="Tele Employee"
             required

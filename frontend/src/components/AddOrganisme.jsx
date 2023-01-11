@@ -2,16 +2,16 @@ import React, { useState } from 'react'
 import { Navigate, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
-const  AddEmploye=()=> {
+const  addOrganisme=()=> {
     const Navigate=useNavigate()
  
     const [formData,SetformData]=useState([])
 
     const handleSubmit= async (e)=>{
         e.preventDefault();
-        const employe=await axios.post('http://localhost:8080/api/employe/createemployes',formData)
-        if(employe.data) Navigate('/employe/list')
-        // console.log(employe.data)
+        const organisme=await axios.post('http://localhost:8080/api/organisme/createorganisme',formData)
+        if(organisme.data) Navigate('/organisme/list')
+        // console.log(organisme.data)
     }
 
     const onChange = (e) => {
@@ -22,7 +22,7 @@ const  AddEmploye=()=> {
     <div>
       <form className="form-container shadow ms-5 mt-5" onSubmit={handleSubmit} >
         <div className="col-md-12">
-            <span>Nom</span>
+            <span>organisme</span>
             <input
             type="text"
             name="name"
@@ -33,27 +33,17 @@ const  AddEmploye=()=> {
             />
         </div>
         <div className="col-md-12">
-            <span>Email</span>
+            <span>Adresse</span>
             <input
             type="text"
-            name="email"
+            name="address"
             className="form-control"
             placeholder="Email Employee"
             required
             onChange={onChange}
             />
         </div>
-        <div className="col-md-12">
-            <span>Téléphone</span>
-            <input
-            type="text"
-            name="tele"
-            className="form-control"
-            placeholder="Tele Employee"
-            required
-            onChange={onChange}
-            />
-        </div>
+      
 
         <button
             type="submit"
@@ -65,4 +55,4 @@ const  AddEmploye=()=> {
   )
 }
 
-export default AddEmploye
+export default addOrganisme

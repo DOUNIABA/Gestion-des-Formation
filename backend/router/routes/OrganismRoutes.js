@@ -1,10 +1,11 @@
 const router=require('express').Router()
 
-const {GetAllOrganisme,CreateOrganisme,UpdateOrganisme,DeleteOrganisme}=require('../../controller/OrganismeController')
+const {GetAllOrganisme,getOrg,CreateOrganisme,UpdateOrganisme,DeleteOrganisme}=require('../../controller/OrganismeController')
 
 router.get('/allorganisme',GetAllOrganisme)
 router.post('/createorganisme',CreateOrganisme)
-router.put('/:id',UpdateOrganisme)
-router.delete('/:id',DeleteOrganisme)
+router.put('/update',UpdateOrganisme)
+router.delete('/delete',DeleteOrganisme)
+router.get('/OneOrganisme',getOrg)
 
 module.exports=router
