@@ -7,16 +7,14 @@ function EditEmploye() {
 const navigate=useNavigate()
 const [Data,setData]=useState([])
 
-
 const handleSubmit=async (e)=>{
     e.preventDefault();
-    const emp=await axios.put('http://localhost:8080/api/employe/update/${id}',Data)
+    const emp=await axios.put(`http://localhost:8080/api/employe/update/${Data._id}`,Data)
     if(emp.data) navigate('/employe/list')}
 
     const onChange=(e)=>{
         setData({...Data,[e.target.name]:e.target.value})
     }
-
     
   return (
     <div>
@@ -28,10 +26,9 @@ const handleSubmit=async (e)=>{
             type="text"
             name="name"
             className="form-control"
-            placeholder="Employee Name"
             required
             onChange={onChange}
-            value={name}
+            value={Data.name}
             />
         </div>
         <div className="col-md-12">
@@ -40,10 +37,9 @@ const handleSubmit=async (e)=>{
             type="text"
             name="email"
             className="form-control"
-            placeholder="Email Employee"
             required
             onChange={onChange}
-            value={email}
+            value={Data.email}
             />
         </div>
         <div className="col-md-12">
@@ -52,10 +48,9 @@ const handleSubmit=async (e)=>{
             type="text"
             name="tele"
             className="form-control"
-            placeholder="Tele Employee"
             required
             onChange={onChange}
-            value={tele}
+            value={Data.tele}
             />
         </div>
 

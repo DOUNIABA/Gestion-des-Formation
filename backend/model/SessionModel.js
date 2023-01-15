@@ -2,14 +2,20 @@
 const mongoose=require('mongoose')
 
 const Sessions= new mongoose.Schema({
-    user_id:{
+    employe:{
         type:mongoose.Schema.Types.ObjectId,
-        ref:'User'
+        ref:'Employe'
     },
 
-    formation_id:{
+    formation:{
         type:mongoose.Schema.Types.ObjectId,
         ref:'Formation'
+    },
+    date_debut:{
+        type:Date,
+    },
+    date_fin:{
+        type:Date,
     }
 })
 

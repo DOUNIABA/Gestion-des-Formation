@@ -6,8 +6,11 @@ import Employeadd from './components/AddEmploye'
 import Formationdisplay from './components/Formatiodisplay'
 import Formationadd from './components/AddFormation'
 import Organismedisplay from './components/Organismedisplay'
-import Organismeadd from './components/AddOrganisme'
+import Organismeadd from './components/Addorganisme'
 import EmployeEdit from './components/EditEmploye'
+import Sessiondisplay from './components/Sessiondisplay'
+import SessionAdd from './components/AddSession'
+
 function App() {
   return (
    
@@ -21,6 +24,8 @@ function App() {
       <Route path='/organisme/list' element={<Organismedisplay/>}></Route>
       <Route path='/organisme/addOrganisme' element={<Organismeadd/>}></Route>
       <Route path='/employe/EmployeEdit' element={<EmployeEdit/>}></Route>
+      <Route path='/session/list' element={<Sessiondisplay/>}></Route>
+      <Route path='/session/addSession' element={<SessionAdd/>}></Route>
 
     </Routes>
   </BrowserRouter>

@@ -7,6 +7,8 @@ const style={width:"auto"}
 const Employedisplay = ()=> {
     const Navigate=useNavigate()
     const [Data,setData]=useState([])
+    const [edite,SetEdite]=useState([])
+
     const data= async ()=>{
 
         const users=await axios.get('http://localhost:8080/api/employe/allemployes')
@@ -16,6 +18,7 @@ const Employedisplay = ()=> {
     useEffect(()=>{
         data();
     },[])
+    
 
     const update= async (e)=>{
       e.preventDefault()
@@ -27,8 +30,8 @@ const Employedisplay = ()=> {
 
     const remove= async (e)=>{
       e.preventDefault()
-      const employes=await axios.post('http://localhost:8080/api/employe/delete',{id:e.target.value})
-      if(employes.data.msg) window.location.reload(false);
+      const employes=await axios.delete('http://localhost:8080/api/employe/delete',{id:e.target.value})
+      if(employes.data) window.location.reload(false);
     }
 
   return (

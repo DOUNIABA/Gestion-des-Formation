@@ -1,11 +1,12 @@
 const mongoose=require('mongoose')
+
 const Formations=new mongoose.Schema({
     formation:{
         type:String,
     },
-    image:{
-        type:String,
-    },
+    // image:{
+    //     type:String,
+    // },
     duree:{
         type:String,
     },

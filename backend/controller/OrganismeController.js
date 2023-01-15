@@ -9,16 +9,13 @@ const CreateOrganisme=(req,res)=>{
     const {body}=req
     const organisme= Organisme.create({...body})
     if(!organisme) res.json({msg:"not created"})
-    res.json(organisme)
+    res.send(organisme)
 }
 
 const getOrg= async (req,res)=>{
     const {id}= req.body
    const org= await Organisme.findOne({_id:id})
-     res.json({
-      msg:"data",
-      data:org,
-    })
+   if(org)  res.send("done")
   }
 
 const UpdateOrganisme= async (req,res)=>{

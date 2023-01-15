@@ -3,7 +3,7 @@ const bcrypt=require('bcryptjs')
 
 const GetEmployes= async (req,res)=>{
   const employe=await Employe.find()
-    res.json(employe)
+    res.send(employe)
 }
 
 const CreateEmployes=async (req,res)=>{
@@ -17,10 +17,7 @@ const CreateEmployes=async (req,res)=>{
 const getEmp= async (req,res)=>{
   const {id}= req.body
  const emp= await Employe.findOne({_id:id})
-   res.json({
-    msg:"data",
-    data:emp,
-  })
+  if(emp) res.send("done")
 }
 
 const UpdateEmploye=async (req,res)=>{
@@ -35,7 +32,7 @@ const DeleteEmploye= async (req,res)=>{
   const id =req.params.id
   const employe= await Employe.deleteOne({id})
   if(employe)
-  res.json("deleted")
+  res.send("deleted")
 }
 
 module.exports={GetEmployes,CreateEmployes,UpdateEmploye,DeleteEmploye,getEmp}

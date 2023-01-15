@@ -5,10 +5,10 @@ import axios from 'axios'
 
 const Login = () => {
     const navigate=useNavigate()
-    const [errmsg,seterrmsg]=useState(false)
+    const [error,seterror]=useState(false)
     const [msg,setmsg]=useState(false)
     const [Data, setData] = useState({});
-  
+
     const handleSubmit = async (e)=>{	
 	   e.preventDefault()
        console.log(Data)
@@ -21,7 +21,7 @@ const Login = () => {
             }
          
     }catch(error){
-			console.log(error) 
+			seterror(error.message) 
 		}
 	}
 

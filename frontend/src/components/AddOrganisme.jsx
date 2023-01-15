@@ -1,21 +1,21 @@
 import React, { useState } from 'react'
-import { Navigate, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
-const  addOrganisme=()=> {
-    const Navigate=useNavigate()
- 
-    const [formData,SetformData]=useState([])
+const AddOrganisme=()=> {
+    const navigate= useNavigate()
+    const [formData,setformData]=useState([])
 
     const handleSubmit= async (e)=>{
         e.preventDefault();
-        const organisme=await axios.post('http://localhost:8080/api/organisme/createorganisme',formData)
-        if(organisme.data) Navigate('/organisme/list')
+        const organisme = await axios.post('http://localhost:8080/api/organisme/createorganisme',formData)
+        if(organisme.data) 
+        navigate('/organisme/list')
         // console.log(organisme.data)
     }
-
+    
     const onChange = (e) => {
-        SetformData({...formData, [e.target.name]: e.target.value });
+      setformData({...formData, [e.target.name]: e.target.value });
       };
 
   return (
@@ -55,4 +55,4 @@ const  addOrganisme=()=> {
   )
 }
 
-export default addOrganisme
+export default AddOrganisme

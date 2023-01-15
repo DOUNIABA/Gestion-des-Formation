@@ -3,22 +3,19 @@ const Formation=require('../model/FormationModel')
 
 const GetAllFormation= async (req,res)=>{
     const formation=await Formation.find()
-    res.json(formation)
+    res.send(formation)
 }
 
 const CreateFormation=async (req,res)=>{
     const {body}=req
     const formation= await Formation.create({...body})
-    if(!formation) res.json({msg:"not created"})
-    res.json(formation)
+    if(!formation) res.send("not created")
+    res.send(formation)
 }
 const getForm= async (req,res)=>{
     const {id}= req.body
    const form= await Formation.findOne({_id:id})
-     res.json({
-      msg:"data",
-      data:form,
-    })
+    if(form) res.send("done")
   }
 
 const UpdateFormation=async (req,res)=>{
@@ -26,14 +23,14 @@ const UpdateFormation=async (req,res)=>{
     const {body}=req
     const formation= await Formation.updateOne(id,{...body})
     if(formation) res.send('updated')
-    res.json({msg:""})
+    res.send("not updated")
 }
 
 const DeleteFormation= async (req,res)=>{
     const id =req.params.id
     const formation= await Formation.deleteOne({id})
     if(formation)
-    res.json("deleted")
+    res.send("deleted")
 }
 
 module.exports={GetAllFormation,CreateFormation,UpdateFormation,DeleteFormation,getForm}
