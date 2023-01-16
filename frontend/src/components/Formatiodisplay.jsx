@@ -12,7 +12,7 @@ const Formationdisplay = ()=> {
         const formations=await axios.get('http://localhost:8080/api/formation/allformation')
         setData(formations.data)
     }
-    
+
     useEffect(()=>{
         data();
     },[])
@@ -61,7 +61,7 @@ const Formationdisplay = ()=> {
                   <td>
                   
                         <button type='submit' className="b " style={style}>Modifier</button>
-                       <button type='submit' className="b " onClick={remove} style={style}>Supprimer</button>
+                       <button type='submit' className="b ms-5" onClick={remove} style={style}>Supprimer</button>
                   </td>
                 </tr>
               </tbody>

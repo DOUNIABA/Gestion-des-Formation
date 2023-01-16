@@ -1,24 +1,19 @@
 import React from 'react'
 import { useEffect,useState } from 'react'
-import { Link, Navigate, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
 import "../App.css";
 const style={width:"auto"}
 
 const Sessiondisplay = ()=> {
-    const Navigate=useNavigate()
     const [Data,setData]=useState([])
-
-    const data= async ()=>{
-        const sessions=await axios.get('http://localhost:8080/api/session/allsession')
+    const data = async ()=>{
+        const sessions = await axios.get('http://localhost:8080/api/session/allsession')
         setData(sessions.data)
-        console.log (sessions)
     }
-
     useEffect(()=>{
-        data();
-    },[])
-    
+      data();
+  },[])
 
   return (
     <div className="bg-gray-300 h-screen flex-col">
@@ -36,24 +31,19 @@ const Sessiondisplay = ()=> {
               Les Sessions <hr className="my-2 p-0" />
             </h2>
 
-           <Link to="/session/addSession"><button type='submit' className="b " style={style}>Add Session</button></Link>  
+           <Link to="/session/addSession"><button type='submit' className="b" style={style}>Ajouter une Session</button></Link>  
         
             <table className="table table-bordered">
               <tr className="text-black">
                 <th>Nom d'Employé</th>
-                <th>Nom de formation</th>
-                <th>Date Début </th>
-                <th>Date Fin </th>
+                <th>Formation</th>
               </tr>
               {Data.map((e) => (
               <tbody>
-                <tr>
+                <tr key={e._id}>
                   <td>{e.employe.name}</td>
-                  <td>{e.formation.formation} </td>
-                  <td>{e.date_debut}</td>
-                  <td>{e.date_fin}</td>
+                  <td>{e.formation.formation}</td>
                   <td>
-                  
                   </td>
                 </tr>
               </tbody>

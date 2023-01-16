@@ -19,7 +19,6 @@ const Login = () => {
             navigate('/employe/list')
             console.log(Data);
             }
-         
     }catch(error){
 			seterror(error.message) 
 		}

@@ -4,22 +4,19 @@ import { Link, Navigate, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import "../App.css";
 const style={width:"auto"}
+
 const Employedisplay = ()=> {
     const Navigate=useNavigate()
     const [Data,setData]=useState([])
-    const [edite,SetEdite]=useState([])
-
+    
     const data= async ()=>{
-
         const users=await axios.get('http://localhost:8080/api/employe/allemployes')
         setData(users.data)
     }
-
     useEffect(()=>{
         data();
     },[])
     
-
     const update= async (e)=>{
       e.preventDefault()
       const id=e.target.value
@@ -43,7 +40,6 @@ const Employedisplay = ()=> {
         </div>
         <div className="m-3 w-100">
           <div>
-
           </div>
           <div className=" container my-6">
             <h2 className="text-xl font-bold text-gray-800 mb-3">
@@ -67,7 +63,7 @@ const Employedisplay = ()=> {
                   <td>{e.tele}</td>
                   <td>
                   <button type='submit' className="b " value={e._id} onClick={update} style={style}>Modifier</button>
-                  <button type='submit' className="b "  value={e._id} onClick={remove}  style={style}>Supprimer</button>
+                  <button type='submit' className="b ms-5"  value={e._id} onClick={remove}  style={style}>Supprimer</button>
 
                   </td>
                 </tr>
@@ -75,8 +71,6 @@ const Employedisplay = ()=> {
                 ))}
             </table>
           </div>
-      
-        
         </div>
       </div>
     </div>

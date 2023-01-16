@@ -4,7 +4,7 @@ const jwt=require('jsonwebtoken')
 const dotenv = require("dotenv")
 const localstorage=require('local-storage')
 
-const signin = async (req,res)=>{
+ const signin = async (req,res)=>{
     const {body}=req
 
     const user = await Admin.findOne({email:body.email})
@@ -22,7 +22,7 @@ const signin = async (req,res)=>{
     res.json({token})
 }
 
-const signup = async (req,res)=>{
+ const signup = async (req,res)=>{
     const {body}=req
 
     localstorage('email',body.email)

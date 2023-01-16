@@ -20,9 +20,8 @@ const GetAllSession=async (req,res)=>{
 const CreateSession= async (req,res)=>{
     const {body}=req
     const session = await Session.create({...body})
-    if(!session) res.send('not created')
-    res.send(session)
-    
+    if(!session) res.json({msg:'not created'})
+    res.json(session)
 }
 
 module.exports={GetAllSession,CreateSession}

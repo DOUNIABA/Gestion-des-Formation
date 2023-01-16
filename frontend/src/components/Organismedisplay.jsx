@@ -56,7 +56,7 @@ const Organismedisplay = ()=> {
                   <td>
                     <div className='ms-5'>
                         <button type='submit' className="b " style={style}>Modifier</button>
-                        <button type='submit' className="b " onClick={remove} style={style}>Supprimer</button>
+                        <button type='submit' className="b ms-5" onClick={remove} style={style}>Supprimer</button>
                     </div>
 
                   </td>
