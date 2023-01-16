@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import "../App.css";
+
 
 const AddOrganisme=()=> {
     const navigate= useNavigate()
@@ -13,14 +15,14 @@ const AddOrganisme=()=> {
         navigate('/organisme/list')
         // console.log(organisme.data)
     }
-    
+
     const onChange = (e) => {
       setformData({...formData, [e.target.name]: e.target.value });
       };
 
   return (
     <div>
-      <form className="form-container shadow ms-5 mt-5" onSubmit={handleSubmit} >
+      <form className="form-container shadow " onSubmit={handleSubmit} >
         <div className="col-md-12">
             <span>organisme</span>
             <input
@@ -43,8 +45,6 @@ const AddOrganisme=()=> {
             onChange={onChange}
             />
         </div>
-      
-
         <button
             type="submit"
             data-testid="submit"

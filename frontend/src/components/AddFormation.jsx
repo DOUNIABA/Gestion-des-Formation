@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Navigate, useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import "../App.css";
 
 const  AddEmploye=()=> {
     const Navigate=useNavigate()
@@ -20,14 +21,14 @@ const  AddEmploye=()=> {
 
   return (
     <div>
-      <form className="form-container shadow ms-5 mt-5" onSubmit={handleSubmit} >
+      <form className="form-container shadow " onSubmit={handleSubmit} >
         <div className="col-md-12">
             <span>Formation</span>
             <input
             type="text"
             name="formation"
             className="form-control"
-            placeholder="Employee Name"
+            placeholder="Formation Name"
             required
             onChange={onChange}
             />
@@ -38,7 +39,7 @@ const  AddEmploye=()=> {
             type="text"
             name="duree"
             className="form-control"
-            placeholder="Email Employee"
+            placeholder="Duree Employee"
             required
             onChange={onChange}
             />

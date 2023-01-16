@@ -19,7 +19,8 @@ const localstorage=require('local-storage')
     localstorage('token',token)
     const tokenverif=await jwt.verify(localstorage('token'),process.env.SECRET) 
     if(!tokenverif) res.json({msg:"token not valid"})
-    res.json({token})
+    res.json({token:token,name:user.name})
+    
 }
 
  const signup = async (req,res)=>{

@@ -6,7 +6,6 @@ import "../App.css";
 const style={width:"auto"}
 
 const Formationdisplay = ()=> {
-
     const [Data,setData]=useState([])
     const data= async ()=>{
         const formations=await axios.get('http://localhost:8080/api/formation/allformation')
@@ -22,7 +21,6 @@ const Formationdisplay = ()=> {
       const formations=await axios.delete('http://localhost:8080/api/formation/delete',{id:e.target.value})
       if(formations.data) window.location.reload(false);
     }
-
 
   return (
     <div className="bg-gray-300 h-screen flex-col">
@@ -40,9 +38,7 @@ const Formationdisplay = ()=> {
             <h2 className="text-xl font-bold text-gray-800 mb-3">
               Les Formations <hr className="my-2 p-0" />
             </h2>
-
            <Link to="/fomation/addFormation"><button type='submit' className="b " style={style}>Nouvelle formation</button></Link>  
-        
             <table className="table table-bordered">
               <tr className="text-black">
                 <th>Formation</th>

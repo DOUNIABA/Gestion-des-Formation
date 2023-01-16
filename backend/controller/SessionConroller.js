@@ -19,9 +19,10 @@ const GetAllSession=async (req,res)=>{
 
 const CreateSession= async (req,res)=>{
     const {body}=req
+    const sessions = await Session.findOne ({employe:body.name, formation:body.formation})
+    if(sessions) res.send("formation déja assignée")
     const session = await Session.create({...body})
     if(!session) res.json({msg:'not created'})
     res.json(session)
 }
-
 module.exports={GetAllSession,CreateSession}

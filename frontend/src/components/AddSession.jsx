@@ -1,6 +1,8 @@
 import React, { useState,useEffect } from 'react'
 import {useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import "../App.css";
+
 
 const  AddSession=()=> {
     const Navigate=useNavigate()
@@ -39,7 +41,7 @@ const  AddSession=()=> {
 
   return (
     <div>
-      <form className="form-container shadow ms-5 mt-5" onSubmit={handleSubmit}>
+      <form className="form-container shadow " onSubmit={handleSubmit} >
         <div className="col-md-12">
         <label>Employé</label>
             <select

@@ -9,11 +9,15 @@ function Logout() {
     const logout = async() => {
       const log= await axios.get('http://localhost:8080/api/auth/logout')
       localStorage.removeItem('token')
+      localStorage.removeItem('name')
      navigate('/')
     };
   return (
     <div>
-    <button  onClick={logout} className="btn  h-25 text-center text-light p-0 m-0 hover">log out</button>
+      {localStorage.getItem('token')?
+      ( <button  onClick={logout} className="btn  h-25 text-center text-light p-0 m-0 hover">log out</button>):
+      ( <button className="btn  h-25 text-center text-light p-0 m-0 hover"></button>)}
+   
    </div>
   )
 }

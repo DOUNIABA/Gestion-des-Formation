@@ -1,75 +1,20 @@
-import { Link } from "react-router-dom";
 
-export default function SideBar() {
-  return (
-    <>
-      <div className="d-flex justify-content-between border-bottom ">
-        <div className="d-flex m-3 " id="dashboard">
-          <div className="bg" id="sidebar-dashboard">
-            <div className=" redressed fw-bolder m-2 dark-text fs-5 fw-bold border-start border-3 px-2">
-            
-            </div>
+import {Link} from "react-router-dom";
+import './sidebar.css'
+import Logout from "./Logout";
 
-            <div className="text-center " />
-            <hr className=""></hr>
-    
-            <Link
-              to=""
-              className="list-group-item  mx-5 border-0 merriweather bg-transparent mt-5 "
-            >
-              <span style={{ color: "white" }}>
-                <i className="far fa-bookmark"></i> 
-              </span>
-            </Link>
-
-            <Link
-              to=""
-              className="list-group-item mx-5 merriweather border-0 bg-transparent rounded-3 mt-5"
-            >
-              <span style={{ color: "white" }}>
-                <i className="fas fa-graduation-cap"></i>
-              </span>
-            </Link>
-            <Link
-              to="/client"
-              className="list-group-item mx-5 merriweather border-0 bg-transparent rounded-3 mt-5"
-            >
-              <span style={{ color: "white" }}>
-                <i className="fas fa-graduation-cap"></i>
-              </span>
-            </Link>
-
-            <a
-              href="#"
-              className="list-group-item mx-5 merriweather border-0 bg-transparent rounded-3 mt-5"
-            >
-              <span style={{ color: "white" }}>
-                <i className="fas fa-graduation-cap"></i>
-              </span>
-            </a>
-
-            <a
-              href="#"
-              className="list-group-item mx-5 border-0 merriweather bg-transparent mt-5 mb-5"
-            >
-              <span style={{ color: "white" }}>
-                <i className="fas fa-sliders-h"></i>
-              </span>
-            </a>
-            <form>
-              <button
-                type="submit"
-                name="logout"
-                className="list-group-item mx-5 border-0 merriweather bg-transparent  mt-5 mb-5 "
-              >
-                <span style={{ color: "white" }}>
-                  <i className="fas fa-sign-out-alt">Logout </i>
-                </span>
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </>
-  );
-}
+const SideBar = () => {
+   
+    return (
+       <div className="sidebox d-flex flex-column justify-content-around align-items-start py-5">
+          <Link to=""  className="btn navbar-brand text-white ms-3 hover" ><i class="bi bi-house-fill"></i>Home</Link>
+          <Link to="/employe/list" className="btn navbar-brand text-white ms-3 hover" ><i class="bi bi-people-fill"></i> Employés</Link>
+          <Link to="/fomation/list"  className="btn navbar-brand text-white ms-3 hover" ><i class="bi bi-journal-text"></i> Formations </Link>
+          <Link to="/organisme/list"  className="btn navbar-brand text-white ms-3 hover" ><i class="bi bi-egg-fried"></i> Organismes</Link>
+          <Link to="/session/list"  className="btn navbar-brand text-white ms-3 hover" ><i class="bi bi-credit-card-fill"></i> Sessions</Link>
+       </div>
+    );
+  };
+  
+  export default SideBar;
+  

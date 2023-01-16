@@ -1,9 +1,8 @@
 const supertest = require('supertest')
-
-module.exports= app=> describe('Employe test', () => {
-  it('Ajout emlpoye', async () => {
+module.exports= app=> describe('Organisme test', () => {
+  it('Ajout organisme', async () => {
     const res = await supertest(app)
-      .post('/api/employe/createemployes')
+      .post('/api/organisme/createorganisme')
       .send({
         name: "Dounia",
         email: "douniaba@gmail.com",
@@ -12,15 +11,15 @@ module.exports= app=> describe('Employe test', () => {
     expect(res.statusCode).toEqual(200)
   })
 
-  it('Suppression Employe', async () => {
+  it('Suppression Organisme', async () => {
     const res = await supertest(app)
-      .delete('/api/emlpoye/delete/63c50a2afe5b4528c03d19fd')
+      .delete('/api/organisme/delete/63c50a2afe5b4528c03d19fd')
       expect(res.statusCode).toEqual(200)
   })
 
-  it('Modification Employé', async () => {
+  it('Modification Organisme', async () => {
     const res = await supertest(app)
-      .patch('/api/emlpoye/update/')
+      .patch('/api/organisme/update/')
       .send({
         name: "Dounia",
         email: "douniaba@gmail.com",

@@ -1,8 +1,7 @@
 
 const supertest = require('supertest')
-const app = require('./index');
 
-modul.exports = app => describe('Login function', () => {
+module.exports = app => describe('Login function', () => {
   it('login', async () => {
     
     const res = await supertest(app)

@@ -34,6 +34,9 @@
       padding: 10px 50px;
       border-radius: 10px;
       width: 450px;
+      margin-left: 20rem!important;
+      margin-top: 100px;
+
   }
 
   .bgf{
@@ -52,9 +55,11 @@
     border-radius: 10px;
     border: 1px solid gray;
 }
+.form{
+}
 
 .navbar{
-  background-color: #8f8ee3;
+  background-color: #312731;
 
 }
 
