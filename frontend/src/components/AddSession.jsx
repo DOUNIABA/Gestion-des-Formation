@@ -15,7 +15,6 @@ const  AddSession=()=> {
         date_fin:"",
       });
 
-
     const getEmploye= async ()=>{
         const users=await axios.get('http://localhost:8080/api/employe/allemployes')
         setEmploye(users.data)
@@ -40,7 +39,7 @@ const  AddSession=()=> {
         SetformData({...formData, [e.target.name]: e.target.value });
       };
 
-      const onChangeDate = (e) => {
+    const onChangeDate = (e) => {
         const newDate = moment(new Date(e.target.value)).format('YYYY-MM-DD');
         setValue(newDate);
         console.log(newDate); 

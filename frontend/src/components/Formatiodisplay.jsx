@@ -12,15 +12,23 @@ const Formationdisplay = ()=> {
         const formations=await axios.get('http://localhost:8080/api/formation/allformation')
         setData(formations.data)
     }
-
+    
     useEffect(()=>{
         data();
     },[])
+
+    const remove= async (e)=>{
+      e.preventDefault()
+      const formations=await axios.delete('http://localhost:8080/api/formation/delete',{id:e.target.value})
+      if(formations.data) window.location.reload(false);
+    }
+
 
   return (
     <div className="bg-gray-300 h-screen flex-col">
       <div>
       </div>
+      
       <div className="flex  ">
         <div className="lg:block">
         </div>
@@ -53,7 +61,7 @@ const Formationdisplay = ()=> {
                   <td>
                   
                         <button type='submit' className="b " style={style}>Modifier</button>
-                       <button type='submit' className="b " style={style}>Supprimer</button>
+                       <button type='submit' className="b " onClick={remove} style={style}>Supprimer</button>
                   </td>
                 </tr>
               </tbody>

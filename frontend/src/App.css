@@ -53,6 +53,11 @@
     border: 1px solid gray;
 }
 
+.navbar{
+  background-color: #8f8ee3;
+
+}
+
 label{
     font-size: 12px;
     color: var(--bs-gray-900);

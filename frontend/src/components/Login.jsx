@@ -8,14 +8,14 @@ const Login = () => {
     const [error,seterror]=useState(false)
     const [msg,setmsg]=useState(false)
     const [Data, setData] = useState({});
-
+  
     const handleSubmit = async (e)=>{	
 	   e.preventDefault()
        console.log(Data)
         try{
 		const user = await axios.post(`http://localhost:8080/api/auth/login`, Data)
 			if(user.data){
-            localStorage.setItem("token",user.data)
+            localStorage.setItem("token",user.data.token)
             navigate('/employe/list')
             console.log(Data);
             }

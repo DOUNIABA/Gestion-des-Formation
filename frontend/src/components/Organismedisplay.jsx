@@ -16,6 +16,13 @@ const Organismedisplay = ()=> {
         data();
     },[])
 
+    const remove= async (e)=>{
+      e.preventDefault()
+      const organismes=await axios.delete('http://localhost:8080/api/organisme/delete',{id:e.target.value})
+      if(organismes.data) window.location.reload(false);
+    }
+
+
   return (
     <div className="bg-gray-300 h-screen flex-col">
       <div>
@@ -49,7 +56,7 @@ const Organismedisplay = ()=> {
                   <td>
                     <div className='ms-5'>
                         <button type='submit' className="b " style={style}>Modifier</button>
-                        <button type='submit' className="b " style={style}>Supprimer</button>
+                        <button type='submit' className="b " onClick={remove} style={style}>Supprimer</button>
                     </div>
 
                   </td>

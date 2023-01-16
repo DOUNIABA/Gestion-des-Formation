@@ -7,29 +7,27 @@ export default function SideBar() {
         <div className="d-flex m-3 " id="dashboard">
           <div className="bg" id="sidebar-dashboard">
             <div className=" redressed fw-bolder m-2 dark-text fs-5 fw-bold border-start border-3 px-2">
-              <h1 className="text-light">
-                <span style={{ color: "#90f5d7" }}>Syndi</span>cat
-              </h1>
+            
             </div>
 
             <div className="text-center " />
             <hr className=""></hr>
     
             <Link
-              to="/appartement"
+              to=""
               className="list-group-item  mx-5 border-0 merriweather bg-transparent mt-5 "
             >
               <span style={{ color: "white" }}>
-                <i className="far fa-bookmark"></i> Appartement
+                <i className="far fa-bookmark"></i> 
               </span>
             </Link>
 
             <Link
-              to="/paiment"
+              to=""
               className="list-group-item mx-5 merriweather border-0 bg-transparent rounded-3 mt-5"
             >
               <span style={{ color: "white" }}>
-                <i className="fas fa-graduation-cap"></i>Paiment
+                <i className="fas fa-graduation-cap"></i>
               </span>
             </Link>
             <Link
@@ -37,7 +35,7 @@ export default function SideBar() {
               className="list-group-item mx-5 merriweather border-0 bg-transparent rounded-3 mt-5"
             >
               <span style={{ color: "white" }}>
-                <i className="fas fa-graduation-cap"></i>Client
+                <i className="fas fa-graduation-cap"></i>
               </span>
             </Link>
 
