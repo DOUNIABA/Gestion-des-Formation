@@ -11,6 +11,8 @@ const Sessions= new mongoose.Schema({
         type:mongoose.Schema.Types.ObjectId,
         ref:'Formation'
     },
+
+    
 })
 
 const Session=mongoose.model("session",Sessions)

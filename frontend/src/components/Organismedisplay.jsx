@@ -11,7 +11,6 @@ const Organismedisplay = ()=> {
         const organismes=await axios.get('http://localhost:8080/api/organisme/allorganisme')
         setData(organismes.data)
     }
-
     useEffect(()=>{
         data();
     },[])
@@ -21,7 +20,7 @@ const Organismedisplay = ()=> {
       const organismes=await axios.delete('http://localhost:8080/api/organisme/delete',{id:e.target.value})
       if(organismes.data) window.location.reload(false);
     }
-
+    
 
   return (
     <div className="bg-gray-300 h-screen flex-col">
