@@ -1,6 +1,7 @@
 const Session = require('../model/SessionModel')
 const Employe=require('../model/EmployeModel')
 const Formation=require('../model/FormationModel')
+const Organisme=require('../model/OrganismeModel')
 
 const GetAllSession=async (req,res)=>{
     const session= await Session.find()
@@ -12,16 +13,18 @@ const GetAllSession=async (req,res)=>{
       {
         path:"formation",
         model:Formation
+    },
+    {
+        path:"organisme",
+        model:Organisme
     }
+
    ])
     res.send(session)
 }
 
 const CreateSession= async (req,res)=>{
     const {body}=req
-    
-    const sessions = await Session.findOne ({employe:body.name, formation:body.formation})
-    if(sessions) res.send("formation déja assignée")
     const session = await Session.create({...body})
     if(!session) res.json({msg:'not created'})
     res.json(session)

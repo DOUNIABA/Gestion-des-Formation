@@ -10,13 +10,13 @@ const Employedisplay = () => {
   const [Data, setData] = useState([]);
 
   const data = async () => {
-    const users = await axios.get("http://localhost:8080/api/employe/allemployes");
+    const users = await axios.get('http://localhost:8080/api/employe/allemployes');
     setData(users.data);
+    console.log(users.data)
   };
   useEffect(() => {
     data();
   }, []);
-
 
   const remove = async (e) => {
     e.preventDefault();
@@ -67,10 +67,7 @@ const Employedisplay = () => {
                         className="b ms-5"
                         value={e._id}
                         onClick={remove}
-                        style={style}
-                      >
-                        Supprimer
-                      </button>
+                        style={style}>Supprimer</button>
                     </td>
                   </tr>
                 </tbody>

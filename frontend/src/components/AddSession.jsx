@@ -93,7 +93,7 @@ const AddSession = () => {
           <label>Organisme</label>
           <select
             className="form-select"
-            name="formation"
+            name="organisme"
             aria-label="Default select example"
             onChange={onChange}
           >

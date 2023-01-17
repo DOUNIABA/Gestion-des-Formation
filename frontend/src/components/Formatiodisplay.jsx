@@ -6,7 +6,7 @@ import "../App.css";
 
 const style = { width: "auto" };
 
-const Formationdisplay = () => {
+const Formationdisplays = () => {
   const [Data, setData] = useState([]);
   const data = async () => {
   const formations = await axios.get("http://localhost:8080/api/formation/allformation");
@@ -80,4 +80,4 @@ const Formationdisplay = () => {
   );
 };
 
-export default Formationdisplay;
+export default Formationdisplays;

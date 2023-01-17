@@ -11,7 +11,10 @@ const Sessions= new mongoose.Schema({
         type:mongoose.Schema.Types.ObjectId,
         ref:'Formation'
     },
-
+    organisme:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:'Organisme'
+    }
     
 })
 

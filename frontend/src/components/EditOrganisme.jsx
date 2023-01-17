@@ -3,7 +3,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
-function EditFormation() {
+function EditOrganismes() {
   const navigate = useNavigate();
   const [Data, setData] = useState([]);
 
@@ -64,4 +64,4 @@ function EditFormation() {
   );
 }
 
-export default EditFormation;
+export default EditOrganismes;

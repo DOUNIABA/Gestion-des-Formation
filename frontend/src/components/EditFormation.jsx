@@ -3,7 +3,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
-function EditFormation() {
+function EditFormations() {
   const navigate = useNavigate();
   const [Data, setData] = useState([]);
 
@@ -19,7 +19,7 @@ function EditFormation() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const form = await axios.put(`http://localhost:8080/api/formation/update/${id}`,Data);
-    if(form.data) navigate('/formation/list');
+    if(form.data) navigate('/fomation/list');
   };
 
   const onChange = (e) => {
@@ -76,4 +76,4 @@ function EditFormation() {
   );
 }
 
-export default EditFormation;
+export default EditFormations;

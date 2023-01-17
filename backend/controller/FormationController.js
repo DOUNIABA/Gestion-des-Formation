@@ -15,15 +15,15 @@ const CreateFormation=async (req,res)=>{
 const getForm= async (req,res)=>{
     const {id}= req.params
     const form= await Formation.findOne({_id:id})
-    if(form) res.send(form)
+   res.send(form)
   }
 
 const UpdateFormation=async (req,res)=>{
     const id = req.params.id
     const {body}=req
-    const formation= await Formation.updateOne(id,{...body})
+    const formation= await Formation.updateOne({_id:id},{...body})
     if(formation) res.send('updated')
-    res.send("not updated")
+    else res.send("not updated")
 }
 
 const DeleteFormation= async (req,res)=>{

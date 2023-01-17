@@ -4,7 +4,8 @@ import { Link,NavLink } from 'react-router-dom'
 import axios from 'axios'
 import "../App.css";
 const style={width:"auto"}
-const Organismedisplay = ()=> {
+
+const Organismedisplays = ()=> {
 
     const [Data,setData]=useState([])
     const data= async ()=>{
@@ -58,7 +59,8 @@ const Organismedisplay = ()=> {
                         <button className=" b ms-5" style={style}>
                           Modifier
                         </button>
-                      </NavLink>                        <button type='submit' className="b ms-5" onClick={remove} style={style}>Supprimer</button>
+                      </NavLink>                       
+                       <button type='submit' className="b ms-5" onClick={remove} style={style}>Supprimer</button>
                     </div>
 
                   </td>
@@ -67,12 +69,10 @@ const Organismedisplay = ()=> {
                 ))}
             </table>
           </div>
-      
-        
         </div>
       </div>
     </div>
   )
 }
 
-export default Organismedisplay
+export default Organismedisplays

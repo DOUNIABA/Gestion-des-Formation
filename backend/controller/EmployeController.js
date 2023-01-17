@@ -14,6 +14,7 @@ const CreateEmployes=async (req,res)=>{
  if(!add) res.send('not created')
  res.send('created')
 }
+
 const getEmp= async (req,res)=>{
   const {id}= req.params
   const emp= await Employe.findOne({_id:id})
@@ -21,9 +22,9 @@ const getEmp= async (req,res)=>{
 }
 
 const UpdateEmploye=async (req,res)=>{
-  const id = req.params
+  const id = req.params.id
   const {body}=req
-  const employe= await Employe.updateOne(id,{...body})
+  const employe= await Employe.updateOne({_id:id},{...body})
   if(employe) res.send('updated')
   else res.send("not updated")
 }

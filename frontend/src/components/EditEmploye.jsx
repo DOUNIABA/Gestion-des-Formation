@@ -3,9 +3,9 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import { useNavigate,useParams } from 'react-router-dom'
 
-function EditEmploye() {
+function EditEmployes() {
 const navigate=useNavigate()
-const [Data,setData]=useState([])
+const [Data,setData] = useState([])
     
 const {id} = useParams()
 
@@ -75,4 +75,4 @@ const handleSubmit=async (e)=>{
   )
 }
 
-export default EditEmploye
+export default EditEmployes
