@@ -1,6 +1,6 @@
 import React from 'react'
 import { useEffect,useState } from 'react'
-import { Link, Navigate, useNavigate } from 'react-router-dom'
+import { Link, Navigate, useNavigate, NavLink } from 'react-router-dom'
 import axios from 'axios'
 import "../App.css";
 const style={width:"auto"}
@@ -62,7 +62,16 @@ const Employedisplay = ()=> {
                   <td>{e.email} </td>
                   <td>{e.tele}</td>
                   <td>
-                  <button type='submit' className="b " value={e._id} onClick={update} style={style}>Modifier</button>
+                  {/* <button type='submit' className="b "  style={style}>Modifier</button>
+                   */}
+                   <NavLink
+
+                   to={`/employe/EmployeEdit/${e._id}`}
+>
+<button className=" b ms-5"  style={style}>
+  Modifier
+</button>
+</NavLink>
                   <button type='submit' className="b ms-5"  value={e._id} onClick={remove}  style={style}>Supprimer</button>
 
                   </td>

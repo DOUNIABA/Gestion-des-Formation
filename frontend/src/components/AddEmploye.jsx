@@ -19,8 +19,9 @@ const  AddEmploye=()=> {
       };
 
   return (
-    <div>
-      <form className="form-container shadow " onSubmit={handleSubmit} >
+    <div className='w-100 mt-5'>
+        <div className='d-flex justify-content-center align-item-center mt-5 '>
+             <form className=" form-container shadow  " onSubmit={handleSubmit} >
         <div className="col-md-12">
             <span>Nom</span>
             <input
@@ -60,7 +61,9 @@ const  AddEmploye=()=> {
             data-testid="submit"
             className=""
             >Save</button>
-        </form>      
+        </form>  
+        </div>
+         
     </div>
   )
 }

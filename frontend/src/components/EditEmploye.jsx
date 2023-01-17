@@ -1,15 +1,25 @@
 import axios from 'axios'
 import React from 'react'
-import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import { useNavigate,useParams } from 'react-router-dom'
 
 function EditEmploye() {
 const navigate=useNavigate()
 const [Data,setData]=useState([])
+    
+const {id} = useParams()
 
+const data= async ()=>{
+    const emp=await axios.get(`http://localhost:8080/api/employe/OneEmployee/${id}`)
+    setData(emp.data)
+}
+useEffect(()=>{
+    data();
+},[])
+console.log(Data)
 const handleSubmit=async (e)=>{
     e.preventDefault();
-    const emp=await axios.put(`http://localhost:8080/api/employe/update/${Data._id}`,Data)
+    const emp=await axios.put(`http://localhost:8080/api/employe/update/${id}`,Data)
     if(emp.data) navigate('/employe/list')}
 
     const onChange=(e)=>{

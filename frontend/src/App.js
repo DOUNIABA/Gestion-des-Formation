@@ -38,7 +38,7 @@ function App() {
       <Route path='/fomation/addFormation' element={<Formationadd/>}></Route>
       <Route path='/organisme/list' element={<Organismedisplay/>}></Route>
       <Route path='/organisme/addOrganisme' element={<AddOrganisme/>}></Route>
-      <Route path='/employe/EmployeEdit' element={<EmployeEdit/>}></Route>
+      <Route path="/employe/EmployeEdit/:id" element={<EmployeEdit/>}></Route>
       <Route path='/session/list' element={<Sessiondisplay/>}></Route>
       <Route path='/session/addSession' element={<SessionAdd/>}></Route>
      </Route>
