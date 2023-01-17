@@ -16,8 +16,8 @@ const CreateEmployes=async (req,res)=>{
 }
 const getEmp= async (req,res)=>{
   const {id}= req.params
- const emp= await Employe.findOne({_id:id})
- res.send(emp)
+  const emp= await Employe.findOne({_id:id})
+  res.send(emp)
 }
 
 const UpdateEmploye=async (req,res)=>{

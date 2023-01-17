@@ -4,11 +4,13 @@ import {Route,Routes,BrowserRouter} from "react-router-dom"
 import Login from './components/Login';
 import Emlpoyedisplay from './pages/Emlpoyedisplay'
 import AddEmployer from './pages/AddEmployer'
+import EmployeEdit from './components/EditEmploye'
 import Formationdisplay from './components/Formatiodisplay'
 import Formationadd from './components/AddFormation'
+import FormationEdit from './components/EditFormation'
 import Organismedisplay from './components/Organismedisplay'
 import AddOrganisme from './components/Addorganisme'
-import EmployeEdit from './components/EditEmploye'
+import OrganismeEdit from './components/EditOrganisme'
 import Sessiondisplay from './components/Sessiondisplay'
 import SessionAdd from './components/AddSession'
 import Navbar from "./components/Navbar";
@@ -41,6 +43,9 @@ function App() {
       <Route path="/employe/EmployeEdit/:id" element={<EmployeEdit/>}></Route>
       <Route path='/session/list' element={<Sessiondisplay/>}></Route>
       <Route path='/session/addSession' element={<SessionAdd/>}></Route>
+      <Route path='/formation/FormationEdit/:id' element={<FormationEdit/>}></Route>
+      <Route path='/organisme/OrganismeEdit/:id' element={<OrganismeEdit/>}></Route>
+
      </Route>
     </Routes>
    </LoginContext.Provider>

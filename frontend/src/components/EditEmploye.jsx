@@ -16,7 +16,6 @@ const data= async ()=>{
 useEffect(()=>{
     data();
 },[])
-console.log(Data)
 const handleSubmit=async (e)=>{
     e.preventDefault();
     const emp=await axios.put(`http://localhost:8080/api/employe/update/${id}`,Data)

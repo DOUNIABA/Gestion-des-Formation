@@ -4,8 +4,8 @@ const {GetAllFormation,getForm,CreateFormation,UpdateFormation,DeleteFormation}=
 
 router.get('/allformation',GetAllFormation)
 router.post('/createformation',CreateFormation)
-router.put('/update',UpdateFormation)
+router.put('/update/:id',UpdateFormation)
 router.delete('/delete',DeleteFormation)
-router.get('/OneFormation',getForm)
+router.get('/OneFormation/:id',getForm)
 
 module.exports= router

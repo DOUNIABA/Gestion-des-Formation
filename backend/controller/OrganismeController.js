@@ -13,9 +13,9 @@ const CreateOrganisme=(req,res)=>{
 }
 
 const getOrg= async (req,res)=>{
-    const {id}= req.body
+    const {id}= req.params
    const org= await Organisme.findOne({_id:id})
-   if(org)  res.send("done")
+   if(org)  res.send(org)
   }
 
 const UpdateOrganisme= async (req,res)=>{
@@ -24,7 +24,6 @@ const UpdateOrganisme= async (req,res)=>{
     const organisme= await Organisme.updateOne(id,{...body})
     if(organisme) res.send('updated')
     res.send('not updated')
-
 }
 
 const DeleteOrganisme=async (req,res)=>{

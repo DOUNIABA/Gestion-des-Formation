@@ -4,8 +4,8 @@ const {GetAllOrganisme,getOrg,CreateOrganisme,UpdateOrganisme,DeleteOrganisme}=r
 
 router.get('/allorganisme',GetAllOrganisme)
 router.post('/createorganisme',CreateOrganisme)
-router.put('/update',UpdateOrganisme)
+router.put('/update/:id',UpdateOrganisme)
 router.delete('/delete',DeleteOrganisme)
-router.get('/OneOrganisme',getOrg)
+router.get('/OneOrganisme/:id',getOrg)
 
 module.exports=router

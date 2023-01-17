@@ -1,4 +1,3 @@
-
 const Formation=require('../model/FormationModel')
 
 const GetAllFormation= async (req,res)=>{
@@ -12,10 +11,11 @@ const CreateFormation=async (req,res)=>{
     if(!formation) res.send("not created")
     res.send(formation)
 }
+
 const getForm= async (req,res)=>{
-    const {id}= req.body
-   const form= await Formation.findOne({_id:id})
-    if(form) res.send("done")
+    const {id}= req.params
+    const form= await Formation.findOne({_id:id})
+    if(form) res.send(form)
   }
 
 const UpdateFormation=async (req,res)=>{
