@@ -25,7 +25,8 @@ const UpdateEmploye=async (req,res)=>{
   const id = req.params.id
   const {body}=req
   const employe= await Employe.updateOne({_id:id},{...body})
-  if(employe) res.send('updated')
+  console.log(employe)
+  if(employe) res.status(200).send('updated')
   else res.send("not updated")
 }
 
@@ -33,7 +34,8 @@ const DeleteEmploye= async (req,res)=>{
   const id =req.params.id
   const employe= await Employe.deleteOne({id})
   if(employe)
-  res.send("deleted")
+  res.status(200).send("deleted")
+  else res.send("not deleted")
 }
 
 module.exports={GetEmployes,CreateEmployes,UpdateEmploye,DeleteEmploye,getEmp}

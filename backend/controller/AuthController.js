@@ -8,8 +8,9 @@ const localstorage=require('local-storage')
     const {body}=req
 
     const user = await Admin.findOne({email:body.email})
-    if(!user) res.json({msg:'user not found'})
-    
+    if(!user) res.status(400).json({msg:'user not found'})
+    else{
+        
     const password= await bcrypt.compare(body.password, user.password)
     if(!password) res.json({msg:'password not valid'})
     
@@ -22,6 +23,7 @@ const localstorage=require('local-storage')
     res.json({token:token,name:user.name})
     
 }
+ }
 
  const signup = async (req,res)=>{
     const {body}=req

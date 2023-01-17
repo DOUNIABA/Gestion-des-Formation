@@ -58,7 +58,8 @@ const AddSession = () => {
   };
 
   return (
-    <div>
+    <div className='w-100 mt-5'>
+        <div className='d-flex justify-content-center align-item-center mt-5 '>
       <form className="form-container shadow " onSubmit={handleSubmit}>
         <div className="col-md-12">
           <label>Employé</label>
@@ -108,6 +109,7 @@ const AddSession = () => {
           Save
         </button>
       </form>
+    </div>
     </div>
   );
 };

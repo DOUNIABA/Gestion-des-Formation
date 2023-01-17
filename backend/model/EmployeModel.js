@@ -12,14 +12,7 @@ const Employes = new mongoose.Schema({
         type:Number,
         required:true,
     },
-    Organisme_id:{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:'Organisme'
-    },
-    formation_id:{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:'Formation'
-    }
+
 }
 )
 const Employe=mongoose.model("employe",Employes)

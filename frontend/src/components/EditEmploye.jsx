@@ -6,7 +6,7 @@ import { useNavigate,useParams } from 'react-router-dom'
 function EditEmployes() {
 const navigate=useNavigate()
 const [Data,setData] = useState([])
-    
+
 const {id} = useParams()
 
 const data= async ()=>{
@@ -16,6 +16,7 @@ const data= async ()=>{
 useEffect(()=>{
     data();
 },[])
+
 const handleSubmit=async (e)=>{
     e.preventDefault();
     const emp=await axios.put(`http://localhost:8080/api/employe/update/${id}`,Data)

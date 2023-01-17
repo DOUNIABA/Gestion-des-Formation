@@ -1,12 +1,11 @@
 version: '3.8'
 services:
   backend:
-
     build: ./backend
     ports:
       - "8080:8080"
     volumes:
-      - ./server:/app
+      - ./backend:/app
       - /app/node_modules
 
   frontend:
@@ -14,7 +13,7 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - ./front-end/src:/app/src
+      - ./frontend/src:/app/src
 volumes:
   mongodb-data:
     driver: local

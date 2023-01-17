@@ -12,8 +12,7 @@ function verify(params){
         }else{
                  res.status(400).send('unauthenticated')
         }
-    }
-    
+    } 
 }
 
 module.exports={verify}

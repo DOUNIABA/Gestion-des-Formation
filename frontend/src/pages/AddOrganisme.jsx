@@ -1,6 +1,6 @@
 import Layout from "./Layout/Layout";
 import React from "react";
-import AddOrganisme from "../components/Addorganisme";
+import AddOrganisme from "../components/AddOrganisme";
 
 
 export default function AddFormation() {
