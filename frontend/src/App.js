@@ -1,4 +1,3 @@
-// import "./App.css"
 import { useState } from "react";
 import {Route,Routes,BrowserRouter} from "react-router-dom"
 import Login from './components/Login';
@@ -17,6 +16,7 @@ import ProtectRoute from "./ProtectRoutes/ProtectRoute";
 import { LoginContext } from "./Contexts/LoginContext";
 import Navbar from './components/Navbar'
 import Logout from "./components/Logout";
+import PageErreur from "./components/PageErreur";
 
 function App() {
   const [value,setValue]=useState("")
@@ -44,6 +44,7 @@ function App() {
       <Route path='/session/addSession' element={<SessionAdd/>}></Route>
       <Route path='/formation/FormationEdit/:id' element={<EditFormations/>}></Route>
       <Route path='/organisme/OrganismeEdit/:id' element={<EditOrganismes/>}></Route>
+      <Route path="*" element={<PageErreur />} />
 
      </Route>
     </Routes>

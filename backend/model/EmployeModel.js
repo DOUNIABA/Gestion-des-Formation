@@ -12,7 +12,6 @@ const Employes = new mongoose.Schema({
         type:Number,
         required:true,
     },
-
 }
 )
 const Employe=mongoose.model("employe",Employes)
